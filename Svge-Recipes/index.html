@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>SVGE Recipes | Smart Recipe Finder & Meal Planner</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-container">
+  <div class="brand">
+    <h1>🍳 SVGE Recipes</h1>
+    <div class="sub">find · save · plan · nourish</div>
+  </div>
+
+  <div class="search-panel">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search recipe (e.g., pasta, chicken, salad)" value="chicken">
+      <button id="searchBtn">🔍 Find</button>
+    </div>
+    <div class="filter-group">
+      <select id="categorySelect">
+        <option value="">All Categories</option>
+      </select>
+      <button id="filterBtn">Filter</button>
+    </div>
+    <div class="nutrition-note">📊 Nutrition data via Edamam (demo key - replace in script for full use)</div>
+  </div>
+
+  <div class="dashboard">
+    <!-- main recipes -->
+    <div class="recipes-section">
+      <div class="section-title">📖 Discover Recipes</div>
+      <div id="recipesGrid" class="recipes-grid">
+        <!-- dynamic recipe cards -->
+        <div style="text-align:center; padding:40px;">Loading delicious recipes...</div>
+      </div>
+    </div>
+
+    <!-- right sidebar: Favorites + Meal Planner -->
+    <div class="sidebar">
+      <div class="fav-list">
+        <div style="font-weight:700; margin-bottom:12px;">❤️ Saved Favorites</div>
+        <div id="favoritesContainer">No favorites yet. Tap heart icon on recipes.</div>
+      </div>
+
+      <div class="meal-plan-wrapper">
+        <div class="section-title" style="margin-bottom:12px;">📅 Weekly Meal Planner</div>
+        <div id="mealPlanContainer" class="meal-plan-grid"></div>
+      </div>
+    </div>
+  </div>
+  <footer>🍽️ SVGE Recipes — Click any recipe card to view nutrition details (ingredients-based). Meal planning uses local storage.</footer>
+</div>
+
+<!-- Nutrition Modal -->
+<div id="nutritionModal" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" id="closeModal">&times;</span>
+    <h3 id="modalRecipeTitle">Recipe Nutrition</h3>
+    <div id="nutritionInfo" class="nutrition-stats">Fetching nutrition facts...</div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,346 @@
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, 'Segoe UI', 'Inter', 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #fefaf5;
+      color: #2d2a24;
+      padding: 24px 20px;
+    }
+
+    .app-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* Header & brand */
+    .brand {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+      border-bottom: 2px solid #f0e3d4;
+      padding-bottom: 12px;
+    }
+    h1 {
+      font-size: 2rem;
+      background: linear-gradient(135deg, #d46b3a, #b1471c);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: -0.5px;
+    }
+    .sub {
+      color: #7e6b5c;
+      font-weight: 500;
+    }
+
+    /* search + filter row */
+    .search-panel {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 32px;
+      background: white;
+      padding: 18px 24px;
+      border-radius: 56px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.03), 0 2px 4px rgba(0,0,0,0.05);
+      align-items: center;
+    }
+    .search-box {
+      flex: 3;
+      display: flex;
+      gap: 10px;
+    }
+    .search-box input {
+      flex: 1;
+      padding: 12px 18px;
+      border: 1px solid #e2d8cf;
+      border-radius: 48px;
+      font-size: 1rem;
+      background: #fffbf8;
+      transition: 0.2s;
+    }
+    .search-box input:focus {
+      outline: none;
+      border-color: #d46b3a;
+      box-shadow: 0 0 0 3px rgba(212,107,58,0.1);
+    }
+    .search-box button, .filter-group button {
+      background: #d46b3a;
+      border: none;
+      color: white;
+      padding: 0 24px;
+      border-radius: 48px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .search-box button:hover, .filter-group button:hover {
+      background: #b1471c;
+      transform: scale(0.97);
+    }
+    .filter-group {
+      flex: 1;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .filter-group select {
+      flex: 1;
+      padding: 12px 16px;
+      border-radius: 48px;
+      border: 1px solid #e2d8cf;
+      background: white;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    .nutrition-note {
+      font-size: 0.75rem;
+      color: #a1826b;
+      background: #f9efea;
+      padding: 4px 12px;
+      border-radius: 40px;
+    }
+
+    /* main layout: 2 columns (recipes + right sidebar) */
+    .dashboard {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+    .recipes-section {
+      flex: 2;
+      min-width: 260px;
+    }
+    .sidebar {
+      flex: 1.2;
+      min-width: 280px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    /* recipe grid */
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-left: 5px solid #d46b3a;
+      padding-left: 14px;
+    }
+    .recipes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 24px;
+    }
+    .recipe-card {
+      background: white;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      transition: 0.2s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+    .recipe-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -12px rgba(0,0,0,0.15);
+    }
+    .recipe-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      background: #f3ede8;
+    }
+    .recipe-info {
+      padding: 16px;
+      flex: 1;
+    }
+    .recipe-title {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .fav-btn {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #ccc;
+      transition: 0.1s;
+      width: 32px;
+    }
+    .fav-btn.active {
+      color: #e63946;
+    }
+    .recipe-category {
+      font-size: 0.75rem;
+      color: #b96f47;
+      background: #f7ede6;
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 40px;
+      margin-top: 8px;
+    }
+    .card-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .btn-sm {
+      background: #f0e3da;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: 0.1s;
+    }
+    .btn-sm.primary {
+      background: #d46b3a20;
+      color: #b1471c;
+    }
+    .btn-sm:hover {
+      background: #e5d5ca;
+    }
+
+    /* favorites & meal plan cards */
+    .fav-list, .meal-day-list {
+      background: white;
+      border-radius: 28px;
+      padding: 18px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.03);
+    }
+    .fav-item, .meal-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid #f0e3d4;
+    }
+    .fav-item:last-child, .meal-item:last-child {
+      border-bottom: none;
+    }
+    .fav-item span, .meal-item span {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .remove-btn {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: #b1a08e;
+    }
+    .meal-plan-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .meal-day {
+      background: #fefaf5;
+      border-radius: 20px;
+      border: 1px solid #f0e3d4;
+      overflow: hidden;
+    }
+    .day-header {
+      background: #fff2ea;
+      padding: 12px 16px;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .day-recipes {
+      padding: 12px;
+      min-height: 80px;
+    }
+    .add-meal-btn {
+      background: none;
+      border: 1px dashed #d4bcab;
+      color: #b1471c;
+      border-radius: 30px;
+      padding: 5px 12px;
+      font-size: 0.7rem;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+    .meal-item {
+      padding: 6px 0;
+      font-size: 0.8rem;
+    }
+    .empty-day {
+      color: #b9aa9b;
+      font-size: 0.75rem;
+      padding: 8px 0;
+    }
+
+    /* modal for nutrition */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .modal-content {
+      background: white;
+      max-width: 480px;
+      width: 90%;
+      border-radius: 36px;
+      padding: 24px;
+      position: relative;
+    }
+    .modal-close {
+      position: absolute;
+      right: 20px;
+      top: 18px;
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+    .nutrition-stats {
+      margin-top: 16px;
+      background: #f9f2ec;
+      border-radius: 24px;
+      padding: 16px;
+    }
+    .nutrient-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid #e9dbd1;
+    }
+    .loading-nutrition {
+      color: #b96f47;
+    }
+    button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    footer {
+      margin-top: 48px;
+      text-align: center;
+      font-size: 0.75rem;
+      color: #bcab9c;
+    }
+    @media (max-width: 800px) {
+      .search-panel { flex-direction: column; border-radius: 28px; }
+      .filter-group { width: 100%; }
+    }
