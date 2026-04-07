@@ -25,7 +25,7 @@ The app is fully responsive and works on both desktop and mobile devices. All us
 ## 🚀 Live Demo
 
 Once deployed, your app will be available at a URL like:  
-`https://svge-recipes.vercel.app` (replace with your own)
+https://svge-recipes-io.vercel.app 
 
 ---
 
@@ -33,5 +33,5 @@ Once deployed, your app will be available at a URL like:
 
 1. **Clone the repository**  
    ```bash
-   git clone https://github.com/your-username/svge-recipes.git
+   git clone https://github.com/VIBE014/svge-recipes.git
    cd svge-recipes
